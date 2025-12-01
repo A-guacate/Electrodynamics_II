@@ -1,0 +1,7 @@
+/series
+*.npy
+*.hdf5
+/venv
+# pixi environments
+.pixi/*
+!.pixi/config.toml

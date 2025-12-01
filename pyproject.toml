@@ -1,0 +1,45 @@
+[project]
+authors = [{name = "William Alexander Pacheco Valderrama", email = "wpachecov@unal.edu.co"}]
+name = "TDGL_simulation-main"
+requires-python = ">= 3.11"
+version = "0.1.0"
+dependencies = [ "meshpy>=2025.1.1,<2026", "gmsh", "tdgl @ git+https://github.com/loganbvh/py-tdgl.git"]
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/electrodynamics_ii"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+tdgl_simulation_main = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+python = "3.11.*"
+numpy = ">=2.3.5,<3"
+scipy = ">=1.16.3,<2"
+matplotlib = ">=3.10.8,<4"
+h5py = ">=3.15.1,<4"
+tqdm = ">=4.67.1,<5"
+cupy = ">=13.6.0,<14"
+ipykernel = ">=7.1.0,<8"
+ffmpeg = ">=8.0.0,<9"
+shapely = ">=2.1.2,<3"
+meshio = ">=5.3.5,<6"
+pint = ">=0.25.2,<0.26"
+gmsh = ">=4.15.0,<5"
+boost-cpp = ">=1.85"
+pybind11 = ">=3.0.1,<4"
+meshpy = ">=2025.1.1,<2026"
+cmocean = ">=4.0.3,<5"
+colorspacious = ">=1.1.2,<2"
